@@ -1,7 +1,14 @@
 let http = require("http");
 
 const server = http.createServer((req, res) => {
-  res.end("hello from the server !");
+  let patName = req.url;
+  if (patName === "/homepage") {
+    res.end("This is homepage!");
+  } else if (patName === "/categories") {
+    res.end("hello from the categories !");
+  } else {
+    res.end("Page not found!");
+  }
 });
 server.listen(8000, "127.0.0.1",()=>{
     console.log('Listening to requests on port 8000');
