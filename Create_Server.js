@@ -7,7 +7,10 @@ const server = http.createServer((req, res) => {
   } else if (patName === "/categories") {
     res.end("hello from the categories !");
   } else {
-    res.end("Page not found!");
+   res.writeHead(404,{
+      'Content-type':'text/html'
+    })
+    res.end("<h1>Page not found!</h1>");
   }
 });
 server.listen(8000, "127.0.0.1",()=>{
