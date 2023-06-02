@@ -1,7 +1,7 @@
-//dosya okuma şeyi
+//file system
 let fs = require("fs");
 
-//senkron dosya okuma ve yazma
+//synchronous file reading and writing
 let string = fs.readFileSync("./txt/input.txt", "utf-8");
 // console.log(string);
 let writeText = `This is what we know about the avocado : ${string}.\nCreated on ${Date.now()}`;
@@ -10,7 +10,7 @@ fs.writeFileSync("./txt/Output.txt", writeText);
 // console.log("written !");
 
 
-//asenkron dosya okuma ve deney
+//asynchronous file reading and writing
 fs.readFile('./txt/start.txt', 'utf-8', (err, data) => {
   if (err) throw err;
   
@@ -29,4 +29,9 @@ fs.readFile('./txt/start.txt', 'utf-8', (err, data) => {
 });
 
 console.log("hi");
+//output: 
+//hi
+//read-this
+//sometimes I think about avocado
+//File written successfully.
 
